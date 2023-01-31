@@ -1,7 +1,4 @@
 const editButton = document.querySelector(".profile__edit-button");
-
-console.log('моя кнопка: ', editButton)
-
 const popup = document.querySelector(".popup");
 const closeButton = popup.querySelector(".popup__close");
 
@@ -16,40 +13,55 @@ const handleeditButtonClick = () => {
 const handleCloseButtonClick = () => {
   toggleOpenPopup();
 };
-
 const handleOverlyClick = (event) => {
   if (event.target === event.currentTarget) {
     toggleOpenPopup();
   }
 };
-
 editButton.addEventListener("click", handleeditButtonClick);
 closeButton.addEventListener("click", handleCloseButtonClick);
-
 popup.addEventListener("click", handleOverlyClick);
+//       -----------------------37мин---------
+let nameInput = document.querySelector(".profile__name");
+let aboutInput = document.querySelector(".profile__about");
+console.log(nameInput);
+console.log(aboutInput);
+let formNameElement = popup.querySelector(".popup__name");
+let formAboutElement = popup.querySelector(".popup__about");
+
+console.log(formNameElement.value);
+console.log(formAboutElement.value);
+
+const saveButton = popup.querySelector(".popup__save");
+const handleSaveButtonClick = () => {
+  popup.classList.remove("popup_opened");
+}
+saveButton.addEventListener('click', handleSaveButtonClick);
 
 
-
-// Находим форму в DOM
-let formElement = popup.querySelector(".popup__save");
-// Находим поля формы в DOM
-let nameInput = popup.querySelector(".popup__name");
-let aboutInput = popup.querySelector(".popup__about");
-
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
+// Обработчик «отправки» формы
 function handleFormSubmit (evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-                                                // Так мы можем определить свою логику отправки.
-                                                // О том, как это делать, расскажем позже.
+          // Так мы можем определить свою логику отправки.
+         // О том, как это делать, расскажем позже.
 
     // Получите значение полей jobInput и nameInput из свойства value
 
     // Выберите элементы, куда должны быть вставлены значения полей
 
     // Вставьте новые значения с помощью textContent
-}
 
+    nameInput.textContent = 'Новое имя';
+    aboutInput.textContent = 'О себе';
+
+
+    function nameInputTextContent (){
+
+    }
+    nameInput.addEventListener("click", handleCloseButtonClick);
+
+
+}
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', handleFormSubmit);

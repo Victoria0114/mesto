@@ -9,6 +9,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
+    cursor: pointer;
+}
+.popup__close:hover{
+    opacity: 0.6;
 }
 @media screen and (max-width: 320px) {
     .popup__close {
