@@ -1,8 +1,8 @@
-# Проект: Место
+# Проект 'Mesto Russia'
 
-### Проект 'Mesto Russia'
+### Первые попытки в JS
 
-* Первые попытки в JS
+* popup, кнопки открывания/закрывания
 
-
+* https://victoria0114.github.io/mesto/
 
