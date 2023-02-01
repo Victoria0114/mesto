@@ -15,7 +15,7 @@
         margin: 36px auto;
     }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 520px) {
     .grid-container{
         max-width: 282px;
         grid-template-columns: 1fr;
