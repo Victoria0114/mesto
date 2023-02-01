@@ -19,7 +19,6 @@
     .grid-container{
         max-width: 282px;
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
         margin: 36px auto 48px;
     }
 }

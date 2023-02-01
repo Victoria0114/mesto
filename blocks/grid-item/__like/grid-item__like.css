@@ -2,8 +2,8 @@
     width: 22px;
     height: 19px;
     cursor: pointer;
-    background-color: #FFFFFF;
-    background-image: url(../../../images/like-heart.png);
+    background-color: rgb(255, 255, 255, 0);
+    background-image: url(../../../images/heart.svg);
     background-position: center;
     background-repeat: no-repeat;
     border: none;
@@ -12,6 +12,6 @@
     opacity: 0.5;
 }
 .grid-item__like:active{
-    background-image: url(../../../images/black-heart.png);
+    background-image: url(../../../images/black_heart.svg);
     opacity: 100%;
 }
