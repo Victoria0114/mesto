@@ -22,15 +22,12 @@ editButton.addEventListener("click", handleeditButtonClick);
 closeButton.addEventListener("click", handleCloseButtonClick);
 popup.addEventListener("click", handleOverlyClick);
 //       -----------------------37мин---------
+let formElement = document.querySelector(".popup__container");
 let nameInput = document.querySelector(".profile__name");
 let aboutInput = document.querySelector(".profile__about");
 console.log(nameInput);
 console.log(aboutInput);
-let formNameElement = popup.querySelector(".popup__name");
-let formAboutElement = popup.querySelector(".popup__about");
 
-console.log(formNameElement.value);
-console.log(formAboutElement.value);
 
 const saveButton = popup.querySelector(".popup__save");
 const handleSaveButtonClick = () => {
@@ -46,21 +43,21 @@ function handleFormSubmit (evt) {
          // О том, как это делать, расскажем позже.
 
     // Получите значение полей jobInput и nameInput из свойства value
-
+    let formNameElement = popup.querySelector(".popup__name");
+    let formAboutElement = popup.querySelector(".popup__about");
+    
+    console.log(formNameElement.value);
+    console.log(formAboutElement.value);
     // Выберите элементы, куда должны быть вставлены значения полей
 
     // Вставьте новые значения с помощью textContent
 
-    nameInput.textContent = 'Новое имя';
-    aboutInput.textContent = 'О себе';
-
-
     function nameInputTextContent (){
 
+      nameInput.textContent = 'Новое имя';
+    aboutInput.textContent = 'О себе';
     }
     nameInput.addEventListener("click", handleCloseButtonClick);
-
-
 }
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
