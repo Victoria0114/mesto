@@ -13,4 +13,5 @@
 }
 .grid-item__like:active{
     background-image: url(../../../images/black-heart.png); 
+    opacity: 100%;
 }
