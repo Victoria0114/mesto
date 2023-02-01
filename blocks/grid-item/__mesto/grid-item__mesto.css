@@ -6,7 +6,7 @@
     font-size: 24px;
     line-height: 29px;
     color: #000000;
-    text-overflow: ellipsis; /* св-во из тз */
-    white-space: nowrap; /* св-во из тз */
-    overflow: hidden; /* св-во из тз */
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
 }
