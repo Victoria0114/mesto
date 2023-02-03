@@ -4,6 +4,10 @@
     line-height: 48px;
     margin: 0;
     padding: 0 18px 16px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 294px;
 }
 @media screen and (max-width: 500px) {
     .profile__name{       
@@ -12,5 +16,6 @@
         line-height: 33px;
         text-align: center;
         padding: 0 10px 0 30px;
+        max-width: 198px;
     }
 }
