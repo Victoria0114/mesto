@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 @media screen and (max-width: 320px) {
     .profile__container{

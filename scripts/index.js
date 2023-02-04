@@ -7,7 +7,7 @@ let profileName = document.querySelector(".profile__name");
 let profileAbout = document.querySelector(".profile__about");
 
 
-const handleeditButtonClick = () => {
+const handleEditButtonClick = () => {
   popup.classList.add('popup_opened');
   nameInput.value = profileName.textContent;
   aboutInput.value = profileAbout.textContent;
@@ -17,14 +17,14 @@ const handleCloseButtonClick = () => {
   popup.classList.remove('popup_opened');
 };
 
-editButton.addEventListener("click", handleeditButtonClick);
+editButton.addEventListener("click", handleEditButtonClick);
 closeButton.addEventListener("click", handleCloseButtonClick);
 
-let formElement = document.querySelector(".form");
+let formElement = document.querySelector(".popup__form");
 function handleFormSubmit (evt) {
     evt.preventDefault(); 
     profileName.textContent = nameInput.value;
-    profileAbout.textContent = profileInput.value;
+    profileAbout.textContent = aboutInput.value;
     handleCloseButtonClick();
 }
 formElement.addEventListener('submit', handleFormSubmit);

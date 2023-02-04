@@ -1,8 +1,7 @@
 .profile__info{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    justify-self: start;
+    justify-content: center;
 }
 @media screen and (max-width: 780px){
     .profile__info{
