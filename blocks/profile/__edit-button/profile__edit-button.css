@@ -6,6 +6,7 @@
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
+    border: 1px solid #fff;
 }
 .profile__edit-button:hover{
     opacity: 0.6;

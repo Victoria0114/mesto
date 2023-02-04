@@ -4,7 +4,7 @@
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-    width: 150px;
+    min-width: 150px;
     height: 50px;
     margin-left: auto;
     border: 2px solid #FFFFFF;
@@ -16,12 +16,7 @@
 }
 @media screen and (max-width: 780px) {
     .profile__add-button{
-        width: 100%;
+        width: calc(100% - 38px);
         margin: 0 auto;
-    }
-}
-@media screen and (max-width: 550px) {
-    .profile__add-button{
-        width: 282px;
     }
 }

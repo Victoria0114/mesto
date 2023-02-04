@@ -4,7 +4,7 @@
     justify-content: flex-start;
     justify-self: start;
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 780px){
     .profile__info{
         margin: 23px auto 30px;
     }

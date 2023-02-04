@@ -1,37 +1,30 @@
 const editButton = document.querySelector(".profile__edit-button");
 const popup = document.querySelector(".popup");
 const closeButton = popup.querySelector(".popup__close");
-let nameInput = document.querySelector('.popup__edit-form_input_name').value;
+let nameInput = document.querySelector('.popup__edit-form_input_name');
+let aboutInput = document.querySelector('.popup__edit-form_input_about');
 let profileName = document.querySelector(".profile__name");
+let profileAbout = document.querySelector(".profile__about");
 
-let formElement = document.querySelector(".form");
 
 const handleeditButtonClick = () => {
   popup.classList.add('popup_opened');
+  nameInput.value = profileName.textContent;
+  aboutInput.value = profileAbout.textContent;
 };
 
 const handleCloseButtonClick = () => {
   popup.classList.remove('popup_opened');
 };
+
 editButton.addEventListener("click", handleeditButtonClick);
 closeButton.addEventListener("click", handleCloseButtonClick);
 
-
+let formElement = document.querySelector(".form");
 function handleFormSubmit (evt) {
     evt.preventDefault(); 
-    // // Получите значение полей jobInput и nameInput из свойства value
-    // // Выберите элементы, куда должны быть вставлены значения полей
-    // // Вставьте новые значения с помощью textContent
-    profileName.textContent = nameInput;
     profileName.textContent = nameInput.value;
+    profileAbout.textContent = profileInput.value;
+    handleCloseButtonClick();
 }
 formElement.addEventListener('submit', handleFormSubmit);
-
-
-// 
-// let profileAbout = document.querySelector(".profile__about");
-// let nameInput = document.querySelector("popup__edit-form_input_name").value;
-// profileName.textContent = nameInput.value;
-// popup.querySelector(".profile__name").textContent = nameInput.value;
-// document.getprofileName
-// console.log(nameInput);
