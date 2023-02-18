@@ -28,12 +28,14 @@
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 
 /*  grid  */
-@import url(../blocks/grid-container/grid-container.css);
-@import url(../blocks/grid-item/grid-item.css);
-@import url(../blocks/grid-item/__image/grid-item__image.css);
-@import url(../blocks/grid-item/__info/grid-item__info.css);
-@import url(../blocks/grid-item/__mesto/grid-item__mesto.css);
-@import url(../blocks/grid-item/__like/grid-item__like.css);
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__info/card__info.css);
+@import url(../blocks/card/__like/card__like.css);
+@import url(../blocks/card/__like/_active/card__like_active.css);
+@import url(../blocks/card/__mesto/card__mesto.css);
+@import url(../blocks/card/__trashbin/card__trashbin.css);
 
 /*  footer  */
 @import url(../blocks/footer/footer.css);

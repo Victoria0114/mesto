@@ -1,4 +1,4 @@
-.grid-container{
+.cards{
     margin: 51px auto 66px;
     display: grid;
     justify-content: center;
@@ -8,7 +8,7 @@
     width: 100%;
 }
 @media screen and (max-width: 780px) {
-    .grid-container{
+    .cards{
         grid-template-columns: calc(50% - 10px) calc(50% - 10px);
         grid-template-rows: auto;
         margin: 36px auto;
@@ -16,7 +16,7 @@
     }
 }
 @media screen and (max-width: 550px) {
-    .grid-container{
+    .cards{
         grid-template-columns: 1fr;
         margin: 36px auto 48px;
     }

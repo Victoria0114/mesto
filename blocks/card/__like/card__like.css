@@ -1,4 +1,4 @@
-.grid-item__like{
+.card__like{
     width: 22px;
     height: 19px;
     cursor: pointer;
@@ -8,10 +8,10 @@
     background-repeat: no-repeat;
     border: none;
 }
-.grid-item__like:hover{
+.card__like:hover{
     opacity: 0.5;
 }
-.grid-item__like:active{
+.card__like:active{
     background-image: url(../../../images/black_heart.svg);
     opacity: 100%;
 }
