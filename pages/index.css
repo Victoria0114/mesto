@@ -57,6 +57,6 @@
 @import url(../blocks/popup/__close/_type/popup__close_type_edit-profile.css);
 @import url(../blocks/popup/__close/_type/popup__close_type_new-place.css);
 @import url(../blocks/popup/__close/_type/popup__close_type_image.css);
-@import url(../blocks/popup);
+@import url(../blocks/popup/__open-image/popup__open-image.css);
 
 
