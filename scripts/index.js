@@ -51,8 +51,8 @@ let aboutInput = document.querySelector(".popup__edit-form_input_about");
 let profileName = document.querySelector(".profile__name");
 let profileAbout = document.querySelector(".profile__about");
 
-const addNameInput = document.querySelector('.popup__add-form_input_place-name');
-const addLinkInput = document.querySelector('.popup__add-form_input_link');
+const addNameInput = document.querySelector('.popup__edit-form_input_place-name');
+const addLinkInput = document.querySelector('.popup__edit-form_input_link');
 
 //---------------------------------------------------------------------------
 
