@@ -93,8 +93,8 @@ formEditProfile.addEventListener('submit', submitEditProfileForm);
 
 const cards = document.querySelector('.cards');
 const cardTemplate = document.querySelector('#card-template').content;
-const captionPopup = document.querySelector('.popup_type_image');
-const imagePopup = document.querySelector('.popup__image');
+const captionPopup = cardTemplate.querySelector('.popup_type_image');
+const imagePopup = cardTemplate.querySelector('.popup__image');
 const popupPlace = document.querySelector('.popup__place');
 
 const createNewCard = (name, link) => {
