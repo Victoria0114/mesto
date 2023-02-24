@@ -76,7 +76,7 @@ buttonCloseAddCardPopup.addEventListener('click', () => {
   closePopup(popupAddNewCard);
 });
 buttonCloseImagePopup.addEventListener('click', () => {
-  closePopup(captionPopup);
+  closePopup(popupCard);
 });
 
 //-------------------------SaveBtnProfile------------------------------
@@ -93,8 +93,8 @@ formEditProfile.addEventListener('submit', submitEditProfileForm);
 
 const cards = document.querySelector('.cards');
 const cardTemplate = document.querySelector('#card-template').content;
-const captionPopup = document.querySelector('.popup_type_image');
-const imagePopup = captionPopup.querySelector('.popup__image');
+const popupCard = document.querySelector('.popup_type_image');
+const imagePopup = popupCard.querySelector('.popup__image');
 const popupPlace = document.querySelector('.popup__place');
 
 const createNewCard = (name, link) => {
@@ -115,7 +115,7 @@ const createNewCard = (name, link) => {
   });
   
   const openBigImage = () => {
-    openPopup(captionPopup);
+    openPopup(popupCard);
     imagePopup.src = cardImage.src;
     imagePopup.alt = cardImage.textContent;
     popupPlace.textContent = cardPlace.textContent;
