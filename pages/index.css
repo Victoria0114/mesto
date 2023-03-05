@@ -59,4 +59,7 @@
 @import url(../blocks/popup/__close/_type/popup__close_type_image.css);
 @import url(../blocks/popup/__open-image/popup__open-image.css);
 
-
+/*  popup error  */
+@import url(../blocks/popup/__edit-form/_type/popup__edit-form_type_error.css);
+@import url(../blocks/popup/__span/popup__span_error.css);
+@import url(../blocks/popup/__span/_error/popup__span_error_visible.css);

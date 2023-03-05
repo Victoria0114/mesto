@@ -54,9 +54,16 @@ const addLinkInput = document.querySelector('.popup__edit-form_input_link');
 
 //---------------------------------------------------------------------------
 
+const closeByEscape = (evt) => {
+  if (evt.key === "Escape") {
+    const popupOpened = document.querySelector(".popup_opened");
+    closePopup(popupOpened);
+  }
+}
 
 const openPopup = (popup) => {
   popup.classList.add('popup_opened');
+  document.addEventListener("keydown", closeByEscape);
 }; 
 
 buttonOpenEditProfilePopup.addEventListener('click', function() {
@@ -67,6 +74,7 @@ buttonOpenEditProfilePopup.addEventListener('click', function() {
 
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEscape);
 };
 
 buttonCloseEditProfilePopup.addEventListener('click', () => {
@@ -79,6 +87,14 @@ buttonCloseImagePopup.addEventListener('click', () => {
   closePopup(popupCard);
 });
 
+const OverlayClosePopup = document.querySelectorAll(".popup");
+OverlayClosePopup.forEach((popup) => {
+  popup.addEventListener("click", (evt) => {
+    if (evt.target === evt.currentTarget || evt.target.classList.contains("popup__close")) {
+      closePopup(evt.currentTarget);
+    }
+  });
+});
 //-------------------------SaveBtnProfile------------------------------
 
 function submitEditProfileForm (evt) {
@@ -143,3 +159,6 @@ const  submitAddCardForm = (evt) => {
 buttonOpenAddCardPopup.addEventListener("click", () => openPopup(popupAddNewCard));
 
 popupAddNewCard.addEventListener("submit", submitAddCardForm);
+
+
+
