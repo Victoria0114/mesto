@@ -5,11 +5,10 @@
     color: #ff0000;
     min-height: 30px;
     padding-top: 5px;
-    margin: 0 36px;
+    margin: 0 auto;
 }
 @media screen and  (max-width: 525px) {
     .form__input-error {
       max-width: 238px;
-      margin: 0 22px;
     }
   }
