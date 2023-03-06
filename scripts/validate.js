@@ -11,14 +11,7 @@
 // });
 
 
-const validationOptions = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__edit-form',
-    submitButtonSelector: '.popup__save',
-    inactiveButtonClass: 'popup__save_disabled',
-    inputErrorClass: 'popup__edit-form_type_error',
-    errorClass: 'popup__span_error'
-};
+
 
 function enableValidation(validationOptions) {
     const formList = Array.from(document.querySelectorAll(validationOptions.formSelector));

@@ -46,23 +46,23 @@ buttonOpenEditProfilePopup.addEventListener('click', function() {
   aboutInput.value = profileAbout.textContent;
 });
 
-const closePopup = (popup) => {
-  popup.classList.remove('popup_opened');
+const closePopup = (popups) => {
+  popups.classList.remove('popup_opened');
   document.removeEventListener('keydown', closeByEscape);
 };
 
-buttonCloseEditProfilePopup.addEventListener('click', () => {
-  closePopup(popupEditProfile);
-});
-buttonCloseAddCardPopup.addEventListener('click', () => {
-  closePopup(popupAddNewCard);
-});
-buttonCloseImagePopup.addEventListener('click', () => {
-  closePopup(popupCard);
-});
+// buttonCloseEditProfilePopup.addEventListener('click', () => {
+//   closePopup(popupEditProfile);
+// });
+// buttonCloseAddCardPopup.addEventListener('click', () => {
+//   closePopup(popupAddNewCard);
+// });
+// buttonCloseImagePopup.addEventListener('click', () => {
+//   closePopup(popupCard);
+// });
 
-const OverlayClosePopup = document.querySelectorAll(".popup");
-OverlayClosePopup.forEach((popup) => {
+const overlayClosePopup = document.querySelectorAll(".popup");
+overlayClosePopup.forEach((popup) => {
   popup.addEventListener("click", (evt) => {
     if (evt.target === evt.currentTarget || evt.target.classList.contains("popup__close")) {
       closePopup(evt.currentTarget);
@@ -92,6 +92,7 @@ const createNewCard = (name, link) => {
   const cardImage = newCard.querySelector('.card__image');
   const cardPlace = newCard.querySelector('.card__mesto');
   cardImage.src = link;
+  cardImage.alt = name;
   cardPlace.textContent = name;
 
   const likeButton = newCard.querySelector('.card__like');
@@ -115,18 +116,19 @@ const createNewCard = (name, link) => {
   return newCard;
 };
 
-const addCard = (name, link) => {
+const addInitialCard = (name, link) => {
   cards.append (createNewCard (name, link));
 };
 
 initialCards.forEach((card) => {
-  addCard(card.name, card.link);
+  addInitialCard(card.name, card.link);
 });
 
 const  submitAddCardForm = (evt) => {
   evt.preventDefault();
   cards.prepend(createNewCard(addNameInput.value, addLinkInput.value));
   evt.target.reset();
+  enableValidation(validationOptions);
   closePopup(popupAddNewCard);
 };
 
