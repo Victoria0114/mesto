@@ -133,6 +133,3 @@ const  submitAddCardForm = (evt) => {
 buttonOpenAddCardPopup.addEventListener("click", () => openPopup(popupAddNewCard));
 
 popupAddNewCard.addEventListener("submit", submitAddCardForm);
-
-
-

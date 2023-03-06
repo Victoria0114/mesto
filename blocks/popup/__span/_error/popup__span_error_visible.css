@@ -1,3 +1,4 @@
 .popup__span_error_visible {
     display: block;
+    visibility: visible;
 }
