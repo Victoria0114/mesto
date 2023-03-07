@@ -5,14 +5,9 @@ const buttonOpenEditProfilePopup = document.querySelector(".profile__edit-button
 const buttonOpenAddCardPopup = document.querySelector(".profile__add-button");
 
 const addCardButton = document.querySelector('popup__save_type_new-card');
-
-//const closeButton = document.querySelectorAll(".popup__close");
-const buttonCloseEditProfilePopup = document.querySelector('.popup__close_type_edit-profile')
-const buttonCloseAddCardPopup = document.querySelector('.popup__close_type_new-place')
-const buttonCloseImagePopup = document.querySelector('.popup__close_type_image')
-
 const popupEditProfile = document.querySelector(".popup_type_edit-profile");
 const popupAddNewCard = document.querySelector(".popup_type_new-place");
+const buttonSubmitAddCard = popupAddNewCard.querySelector('.popup__save');
 
 //-----------------------------Input-----------------------------------
 const formEditProfile = document.querySelector(".popup__form");
@@ -50,16 +45,6 @@ const closePopup = (popups) => {
   popups.classList.remove('popup_opened');
   document.removeEventListener('keydown', closeByEscape);
 };
-
-// buttonCloseEditProfilePopup.addEventListener('click', () => {
-//   closePopup(popupEditProfile);
-// });
-// buttonCloseAddCardPopup.addEventListener('click', () => {
-//   closePopup(popupAddNewCard);
-// });
-// buttonCloseImagePopup.addEventListener('click', () => {
-//   closePopup(popupCard);
-// });
 
 const overlayClosePopup = document.querySelectorAll(".popup");
 overlayClosePopup.forEach((popup) => {
@@ -114,6 +99,7 @@ const createNewCard = (name, link) => {
 
   cardImage.addEventListener('click', openBigImage);
   return newCard;
+  
 };
 
 const addInitialCard = (name, link) => {
@@ -128,7 +114,7 @@ const  submitAddCardForm = (evt) => {
   evt.preventDefault();
   cards.prepend(createNewCard(addNameInput.value, addLinkInput.value));
   evt.target.reset();
-  enableValidation(validationOptions);
+  disableButton(buttonSubmitAddCard, validationOptions);
   closePopup(popupAddNewCard);
 };
 
