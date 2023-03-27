@@ -23,9 +23,9 @@ const initialCards = [
       name: 'Байкал',
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
-  ];
+];
 
-  const validationOptions = {
+const validationOptions = {
     formSelector: '.popup__form',
     inputSelector: '.popup__edit-form',
     submitButtonSelector: '.popup__save',
@@ -33,3 +33,5 @@ const initialCards = [
     inputErrorClass: 'popup__edit-form_type_error',
     errorClass: 'popup__span_error'
 };
+
+export { initialCards, validationOptions };
