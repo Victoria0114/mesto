@@ -19,10 +19,23 @@ class FormValidator {
     const errorElement = this._formElement.querySelector(
       `.${inputElement.id}-error`
       ); 
-    errorElement.textContent = this._inputElement.validationMessage; 
+    errorElement.textContent = inputElement.validationMessage; 
     errorElement.classList.add(this._errorClass); 
     inputElement.classList.add(this._inputErrorClass);
   }
+  // _showInputError(inputElement) {
+  //   const errorElement = this._formElement.querySelector(
+  //     .${inputElement.id}-error
+  //   );
+
+
+  //   errorElement.textContent = inputElement.validationMessage;
+  //   errorElement.classList.add(this._errorClass);
+  //   inputElement.classList.add(this._inputErrorClass);
+  // } вот так должна выглоядеть функция,
+  //  у тебя inputElement относится к телу функции(методу класса) 
+  //  почему ты обращаешься через this к нему? 
+  //  this это класс полностью в данном контексте
   
   _hideInputError(inputElement) {
     const errorElement = this._formElement.querySelector(

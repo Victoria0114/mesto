@@ -157,7 +157,6 @@ buttonOpenAddCardPopup.addEventListener("click", openFormCard);
 popupAddNewCard.addEventListener("submit", submitFormCard);
 
 
-console.log(`.${inputElement.id}-error`)
 
 
 
