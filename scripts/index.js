@@ -52,8 +52,8 @@ const openPopup = (popup) => {
   document.addEventListener("keydown", closeByEscape);
 }; 
 
-const closePopup = (popups) => {
-  popups.classList.remove('popup_opened');
+const closePopup = (popup) => {
+  popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closeByEscape);
 };
 
@@ -63,6 +63,7 @@ const closeByEscape = (evt) => {
     closePopup(popupOpened);
   }
 }
+
 const overlayClosePopup = document.querySelectorAll(".popup");
 overlayClosePopup.forEach((popup) => {
   popup.addEventListener("click", (evt) => {
@@ -71,7 +72,6 @@ overlayClosePopup.forEach((popup) => {
     }
   });
 });
-
 
 const openImagePopup = (name, link) => {
   openPopup(popupCard);
@@ -104,18 +104,6 @@ const submitFormProfile = () => {
   profileAbout.textContent = aboutInput.value;
   closePopup(popupEditProfile);
 };
-// formEditProfile.addEventListener('submit', submitEditProfileForm);
-
-
-
-
-// const  submitAddCardForm = (evt) => {
-//   evt.preventDefault();
-//   cards.prepend(createNewCard(addNameInput.value, addLinkInput.value));
-//   evt.target.reset();
-//   disableButton(buttonSubmitAddCard, validationOptions);
-//   closePopup(popupAddNewCard);
-// };
 
 // обработчик открытия формы "Новое место"
 const openFormCard = () => {
@@ -133,15 +121,6 @@ const submitFormCard = (evt) => {
   evt.target.reset();
   closePopup(popupAddNewCard);
 };
-
-
-// buttonOpenAddCardPopup.addEventListener("click", () => openPopup(popupAddNewCard));
-
-// popupAddNewCard.addEventListener("submit", submitAddCardForm);
-
-
-
-
 // слушатели
 
 // открыть форму "Редактировать профиль"
@@ -155,43 +134,3 @@ buttonOpenAddCardPopup.addEventListener("click", openFormCard);
 
 // сохранить (закрыть) форму "Новое место"
 popupAddNewCard.addEventListener("submit", submitFormCard);
-
-
-
-
-
-// buttonOpenEditProfilePopup.addEventListener('click', function() {
-//   openPopup(popupEditProfile);
-//   nameInput.value = profileName.textContent;
-//   aboutInput.value = profileAbout.textContent;
-// });
-
-
-// const createNewCard = (name, link) => {
-//   const newCard = cardTemplate.cloneNode(true);
-//   const cardImage = newCard.querySelector('.card__image');
-//   const cardPlace = newCard.querySelector('.card__mesto');
-//   cardImage.src = link;
-//   cardImage.alt = name;
-//   cardPlace.textContent = name;
-
-//   const likeButton = newCard.querySelector('.card__like');
-//   likeButton.addEventListener('click', evt => {
-//     evt.target.classList.toggle('card__like_active');
-//   });
-
-//   const deleteButton = newCard.querySelector('.card__trashbin');
-//   deleteButton.addEventListener('click', evt => {
-//     evt.target.closest('.card').remove();
-//   });
-  
-//   cardImage.addEventListener('click', openBigImage);
-//   return newCard;
-// };
-
-// const openBigImage = () => {
-//   openPopup(popupCard);
-//   imagePopup.src = cardImage.src;
-//   imagePopup.alt = cardImage.textContent;
-//   popupPlace.textContent = cardPlace.textContent;
-// };
