@@ -1,4 +1,4 @@
-class FormValidator {
+export default class FormValidator {
   constructor(validationOptions, formElement) {
     this._inputSelector = validationOptions.inputSelector;
     this._submitButtonSelector = validationOptions.submitButtonSelector;
@@ -22,21 +22,7 @@ class FormValidator {
     errorElement.textContent = inputElement.validationMessage; 
     errorElement.classList.add(this._errorClass); 
     inputElement.classList.add(this._inputErrorClass);
-  }
-  // _showInputError(inputElement) {
-  //   const errorElement = this._formElement.querySelector(
-  //     .${inputElement.id}-error
-  //   );
-
-
-  //   errorElement.textContent = inputElement.validationMessage;
-  //   errorElement.classList.add(this._errorClass);
-  //   inputElement.classList.add(this._inputErrorClass);
-  // } вот так должна выглоядеть функция,
-  //  у тебя inputElement относится к телу функции(методу класса) 
-  //  почему ты обращаешься через this к нему? 
-  //  this это класс полностью в данном контексте
-  
+  }  
   _hideInputError(inputElement) {
     const errorElement = this._formElement.querySelector(
     `.${inputElement.id}-error`);
@@ -101,5 +87,3 @@ class FormValidator {
     this._setEventListeners();
   }
 }
-
-export default FormValidator;
