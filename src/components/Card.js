@@ -18,9 +18,9 @@ export default class Card {
         this._buttonLike.classList.toggle("card__like_active");
     }
     _trash() {
-        //this._buttonDelete.closest('.card').remove();
-        this._card.remove();
-        this._card = null;
+        this._buttonDelete.closest('.card').remove();
+        //this._card.remove();
+        //this._card = null;
     }
     _setEventListeners() {
         this._buttonLike.addEventListener("click", () => {

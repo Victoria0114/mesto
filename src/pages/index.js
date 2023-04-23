@@ -19,8 +19,6 @@ import {
   cardsContainerSelector
 } from '../utils/constants.js';
 
-console.log(formElement);
-
 // валидатор формы "Редактировать профиль"
 const formProfileValidator = new FormValidator(
   validationOptions,

@@ -22,13 +22,23 @@ export default class Popup {
       }
     }
 
-    setEventListeners() {
-      //добавляет слушатель клика иконке закрытия попапа. 
-      //Модальное окно также закрывается при клике на затемнённую область вокруг формы.    this._popup.addEventListener('mousedown', (evt) => {
+    // setEventListeners() {
+    //   //добавляет слушатель клика иконке закрытия попапа. 
+    //   //Модальное окно также закрывается при клике на затемнённую область вокруг формы.    
+    //   this._popup.addEventListener('mousedown', (evt) => {
+    //   if (evt.target.classList.contains('popup_opened') 
+    //   || 
+    //   evt.target.classList.contains('popup__close')) {
+    //     this.close();
+    //    }
+    //   }
+    
+
+    setEventListeners() { 
+      this._popup.addEventListener('mousedown', (evt) => { 
       if (evt.target.classList.contains('popup_opened') 
       || 
-      evt.target.classList.contains('popup__close')) {
-        this.close();
-      }
-    };
-  }
+      evt.target.classList.contains('popup__close')) { 
+        this.close(); } }) 
+    }
+}
