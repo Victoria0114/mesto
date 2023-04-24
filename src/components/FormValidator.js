@@ -56,7 +56,6 @@ export default class FormValidator {
   }
 
   _toggleButtonState() {
-    // если хотя бы одно поле ввода пустое или невалидно, сделать кнопку неактивной
     if (this._hasInvalidInput()) {
       this._disableButton();
     } else {

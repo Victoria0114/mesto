@@ -35,19 +35,20 @@ export default class Card {
     }
     generateCard() {
         this._element = this._getTemplate();
-      
         this._cardImage = this._element.querySelector('.card__image');
         this._cardName = this._element.querySelector('.card__mesto');
-        //this._cardName.querySelector('.card__mesto').textContent = this._name;
         this._buttonLike = this._element.querySelector(".card__like");
         this._buttonDelete = this._element.querySelector(".card__trashbin");
         
         this._setEventListeners();
 
         this._cardImage.src = this._link;
-        this._cardImage.alt = this._link;
+        this._cardName.alt = this._name;
         this._cardName.textContent = this._name;
-
+        console.log(this._cardName);
+        console.log(this._name);  //не находит имя
+        console.log(this._link);
+    
         return this._element;
     } 
 }
