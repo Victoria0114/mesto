@@ -43,7 +43,7 @@ export default class Card {
         this._setEventListeners();
 
         this._cardImage.src = this._link;
-        this._cardName.alt = this._name;
+        this._cardImage.alt = this._name;
         this._cardName.textContent = this._name;
         console.log(this._cardName);
         console.log(this._name);  //не находит имя

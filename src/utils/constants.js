@@ -40,8 +40,8 @@ export const validationOptions = {
 //export const popupAddCardSelector = document.querySelector(".popup_type_new-place");
 //export const popupCardImageSelector = document.querySelector('.popup_type_image');
 
-export const popupEditProfileSelector = ".popup_type_edit-profile"; 
-export const popupAddCardSelector = ".popup_type_new-place"; 
+export const popupEditProfileSelector = '.popup_type_edit-profile'; 
+export const popupAddCardSelector = '.popup_type_new-place'; 
 export const popupCardImageSelector = '.popup_type_image';
 
 /* кнопки открытия */

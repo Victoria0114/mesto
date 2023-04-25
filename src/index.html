@@ -49,7 +49,7 @@
             <button class="popup__close popup__close_type_new-place" type="button" aria-label="Закрыть"></button>
             <h2 class="popup__title">Новое место</h2>
             <form class="popup__form" name="form-add-card" action="#" method="post" novalidate>
-                <input class="popup__edit-form popup__edit-form_input_place-name" id="place-input" name="place-name" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+                <input class="popup__edit-form popup__edit-form_input_place-name" id="place-input" name="name" type="text" placeholder="Название" minlength="2" maxlength="30" required>
                 <span class="popup__span popup__span_error_visible place-input-error"></span>
                 <input class="popup__edit-form popup__edit-form_input_link" id="link-input" name="link" type="url" placeholder="Ссылка на картинку" required>
                 <span class="popup__span popup__span_error_visible link-input-error"></span>
@@ -69,7 +69,7 @@
             <button class="card__trashbin" type="button" aria-label="Удалить"></button>
             <img class="card__image" src="#" alt="Фото места">
             <div class="card__info">
-                <h2 class="card__mesto"></h2>
+                <h2 class="card__mesto" name="name"></h2>
                 <button class="card__like" type="button" aria-label="Нравится"></button>
             </div>
         </article>
