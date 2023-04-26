@@ -64,8 +64,8 @@ const handleSubmitCard = ({name: name, link}) => {
 };
 
 // обработчик клика по картинке карточки (открыть)
-const handleCardClick = (link, name) => {
-  popupCardImage.open(link, name);
+const handleCardClick = (cardImageSrc, cardImageAlt) => {
+  popupCardImage.open(cardImageSrc, cardImageAlt);
 };
 
 // создать отдельную карточку
