@@ -14,6 +14,7 @@ export default class Card {
       
         return cardElement;
     }
+
     _like() {
         this._buttonLike.classList.toggle("card__like_active");
     }
@@ -30,7 +31,7 @@ export default class Card {
             this._trash();
         });
         this._cardImage.addEventListener("click", () => {
-            this._handleCardClick(this._name, this._link);
+            this._handleCardClick(this._link, this._name);
         });
     }
     generateCard() {
@@ -39,18 +40,14 @@ export default class Card {
         this._cardName = this._element.querySelector('.card__mesto');
         this._buttonLike = this._element.querySelector(".card__like");
         this._buttonDelete = this._element.querySelector(".card__trashbin");
-        
-        this._setEventListeners();
 
         this._cardImage.src = this._link;
         this._cardImage.alt = this._name;
         this._cardName.textContent = this._name;
-        console.log(this._cardName);
-        console.log(this._name);  //не находит имя
-        console.log(this._link);
+        //this._cardName.querySelector('.card__mesto').textContent = this._name;
+
+        this._setEventListeners();
     
         return this._element;
     } 
 }
-
-

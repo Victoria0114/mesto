@@ -58,14 +58,14 @@ const handleAddCard = () => {
 };
 
 // обработчик submit карточки
-const handleSubmitCard = ({place: name, link}) => {
+const handleSubmitCard = ({name: name, link}) => {
   renderCard({name, link});
   popupAddCard.close();
 };
 
 // обработчик клика по картинке карточки (открыть)
-const handleCardClick = (cardImageSrc, cardImageAlt) => {
-  popupCardImage.open(cardImageSrc, cardImageAlt);
+const handleCardClick = (link, name) => {
+  popupCardImage.open(link, name);
 };
 
 // создать отдельную карточку
