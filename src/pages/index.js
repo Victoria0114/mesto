@@ -146,7 +146,7 @@ const handleSubmitFormCard = (cardData) => {
     })
 };
 
-// Обновить аватар
+// Обновление аватара
 
 const handleOpenFormAvatar = () => {
   formAvatarValidator.resetValidation();
@@ -155,7 +155,6 @@ const handleOpenFormAvatar = () => {
 
 const handleSubmitFormAvatar = (userData) => {
   popupFormAvatar.renderLoading(true);
-  // запрос на сервер: обновить аватар пользователя
   api.patchAvatar(userData)
     .then((userData) => {
       userInfo.setUserAvatar(userData);
