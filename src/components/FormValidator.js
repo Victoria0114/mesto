@@ -7,6 +7,7 @@ export default class FormValidator {
     this._errorClass = validationOptions.errorClass;
 
     this._formElement = formElement;
+    
     this._inputList = Array.from(
       this._formElement.querySelectorAll(this._inputSelector)
       );
@@ -19,7 +20,7 @@ export default class FormValidator {
     const errorElement = this._formElement.querySelector(
       `.${inputElement.id}-error`
       ); 
-    console.log(`.${inputElement.id}-error`)
+    //console.log(`.${inputElement.id}-error`)
     errorElement.textContent = inputElement.validationMessage; 
     errorElement.classList.add(this._errorClass); 
     inputElement.classList.add(this._inputErrorClass);

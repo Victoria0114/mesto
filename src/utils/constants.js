@@ -35,27 +35,36 @@ export const validationOptions = {
 };
 
 /* все окна-popup */
-//export const popup = document.querySelector(".popup");
-//export const popupEditProfileSelector = document.querySelector(".popup_type_edit-profile");
-//export const popupAddCardSelector = document.querySelector(".popup_type_new-place");
-//export const popupCardImageSelector = document.querySelector('.popup_type_image');
-
 export const popupEditProfileSelector = '.popup_type_edit-profile'; 
 export const popupAddCardSelector = '.popup_type_new-place'; 
 export const popupCardImageSelector = '.popup_type_image';
+export const popupFormConfirmationSelector = '.popup_type_delete-card';
+export const popupFormAvatarSelector = '.popup_type_avatar';
 
-/* кнопки открытия */
-export const buttonOpenEditProfilePopup = document.querySelector(".profile__edit-button");
-export const buttonOpenAddCardPopup = document.querySelector(".profile__add-button");
+/* профиль пользователя */
+export const userNameSelector = '.profile__name';
+export const userJobSelector = '.profile__about';
+export const userAvatarSelector = '.profile__avatar';
+
+/* кнопки */
+//export const buttonOpenEditProfilePopup = document.querySelector(".profile__edit-button");
+//export const buttonOpenAddCardPopup = document.querySelector(".profile__add-button");
+export const buttonEdit = document.querySelector('.profile__edit-button');
+export const buttonAdd = document.querySelector('.profile__add-button');
+export const buttonAvatar = document.querySelector('.profile__avatar-button');
 
 /* форма Редактировать профиль */
-//export const formEditProfile = document.querySelector("form-edit-profile");
-export const formEditProfile = document.querySelector('[name="form-edit-profile"]');
-
+//export const formEditProfile = document.querySelector('[name='form-edit-profile']');
+export const formProfile = document.forms['form-edit-profile'];
 
 /* форма Новое место */
-//export const formCard = document.querySelector("form-add-card");
-export const formCard = document.querySelector('[name="form-add-card"]');
+//export const formCard = document.querySelector('[name='form-add-card']');
+export const formCard = document.forms['form-add-card'];
+
+/* форма Аватар */
+//export const formAvatar = document.querySelector('[name='form-avatar']');
+export const formAvatar = document.forms['form-avatar'];
+
 /* template */
 export const cardTemplateSelector = '#card-template';
 
