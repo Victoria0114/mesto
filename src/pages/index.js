@@ -28,7 +28,6 @@ import {
 } from '../utils/constants.js';
 
 let userId;
-console.log(buttonSubmit);
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-64',
@@ -38,17 +37,17 @@ const api = new Api({
   }
 }); 
 
-
+// делаем запрос на сервер
 Promise.all([api.getUserInfo(), api.getCards()])
   .then(([userData, cards]) => {
     userId = userData._id;
-    userInfo.setUserInfo(userData);
-    cardsContainer.renderItems(cards);
+    userInfo.setUserInfo(userData); // получаем данные пользователя
+    cardsContainer.renderItems(cards); // карточки
   })
   .catch((err) => {
     console.log(`Ошибка: ${err}`);
   })
-//
+
 // открыть форму Редактировать профиль
 const handleOpenFormProfile = () => {
   const { name, about } = userInfo.getUserInfo();
@@ -77,12 +76,12 @@ const handleSubmitFormProfile = (userData) => {
 
 // Добавление карточек
 
-// обработчик клика по картинке карточки (открыть)
+// открываем карточки
 const handleCardClick = (cardImageSrc, cardImageAlt) => {
   popupCardImage.open(cardImageSrc, cardImageAlt);
 };
 
-// создать карточку
+// создаем карточку
 const createCard = (cardData) => {
   const card = new Card(
     cardData,
@@ -91,7 +90,6 @@ const createCard = (cardData) => {
     handleCardClick,
     { handleLikeClick: (cardId, isLiked) => {
         if (isLiked) {
-          // запрос на сервер: удалить лайк
           api.deleteLike(cardId)
             .then((cardData) => {
               card.deleteLike(cardData.likes);
@@ -100,7 +98,6 @@ const createCard = (cardData) => {
               console.log(`Ошибка: ${err}`);
             })
         } else {
-          // запрос на сервер: поставить лайк
           api.putLike(cardId)
             .then((cardData) => {
               card.putLike(cardData.likes);
@@ -113,7 +110,6 @@ const createCard = (cardData) => {
       handleDeleteClick: (cardId) => {
         popupFormConfirmation.open();
         popupFormConfirmation.handleSubmit(() => {
-          // запрос на сервер: удалить карточку
           api.deleteCard(cardId)
             .then((cardData) => {
               card.deleteCard(cardData._id);
@@ -130,16 +126,13 @@ const createCard = (cardData) => {
   return createdCard;
 };
 
-// открыть форму "Новое место"
+
 const handleOpenFormCard = () => {
   formCardValidator.resetValidation();
   popupFormCard.open();
 };
-
-// submit + закрыть форму "Новое место"
 const handleSubmitFormCard = (cardData) => {
   popupFormCard.renderLoading(true);
-  // запрос на сервер: добавить карточку
   api.postCard(cardData)
     .then((cardData) => {
       cardsContainer.addItem(createCard(cardData));
@@ -153,15 +146,13 @@ const handleSubmitFormCard = (cardData) => {
     })
 };
 
-  // Обновление аватара
+// Обновить аватар
 
-  // открыть форму "Обновить аватар"
-  const handleOpenFormAvatar = () => {
-    formAvatarValidator.resetValidation();
-    popupFormAvatar.open();
-  };
-  
-  // submit + закрыть форму "Обновить аватар"
+const handleOpenFormAvatar = () => {
+  formAvatarValidator.resetValidation();
+  popupFormAvatar.open();
+};
+
 const handleSubmitFormAvatar = (userData) => {
   popupFormAvatar.renderLoading(true);
   // запрос на сервер: обновить аватар пользователя
