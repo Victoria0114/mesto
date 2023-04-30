@@ -48,8 +48,8 @@ Promise.all([api.getUserInfo(), api.getCards()])
     console.log(`Ошибка: ${err}`);
   })
 
-// открыть форму Редактировать профиль
-const handleOpenFormProfile = () => {
+
+  const handleOpenFormProfile = () => {
   const { name, about } = userInfo.getUserInfo();
   formProfile.name.value = name;
   formProfile.about.value = about;
@@ -57,10 +57,9 @@ const handleOpenFormProfile = () => {
   popupFormProfile.open();
 };
 
-// submit + закрыть форму "Редактировать профиль"
 const handleSubmitFormProfile = (userData) => {
   popupFormProfile.renderLoading(true);
-  // запрос на сервер: обновить данные о пользователе
+  // обновляем данные о пользователе
   api.patchUserInfo(userData)
     .then((userData) => {
       userInfo.setUserInfo(userData);
@@ -76,12 +75,10 @@ const handleSubmitFormProfile = (userData) => {
 
 // Добавление карточек
 
-// открываем карточки
 const handleCardClick = (cardImageSrc, cardImageAlt) => {
   popupCardImage.open(cardImageSrc, cardImageAlt);
 };
 
-// создаем карточку
 const createCard = (cardData) => {
   const card = new Card(
     cardData,
