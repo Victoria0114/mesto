@@ -1,6 +1,6 @@
 //Свойство items — это массив данных, 
 //которые нужно добавить на страницу при инициализации класса. 
-//
+
 export default class Section {
   constructor({ renderer }, containerSelector) {
     this._renderer = renderer;

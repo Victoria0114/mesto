@@ -15,7 +15,7 @@ import {
   popupCardImageSelector,
   popupFormConfirmationSelector,
   userNameSelector,
-  userJobSelector,
+  userAboutSelector,
   userAvatarSelector,
   buttonEdit,
   buttonAvatar,
@@ -171,7 +171,7 @@ const handleSubmitFormAvatar = (userData) => {
 
 //Для каждого попапа создавайте свой экземпляр класса PopupWithForm.
 
-const userInfo = new UserInfo(userNameSelector, userJobSelector, userAvatarSelector);
+const userInfo = new UserInfo(userNameSelector, userAboutSelector, userAvatarSelector);
 const cardsContainer = new Section({ renderer: createCard }, cardsContainerSelector);
 const popupFormProfile = new PopupWithForm(popupEditProfileSelector, handleSubmitFormProfile);
 const popupFormAvatar = new PopupWithForm(popupFormAvatarSelector, handleSubmitFormAvatar);
@@ -182,17 +182,14 @@ const formProfileValidator = new FormValidator(validationOptions, formProfile);
 const formCardValidator = new FormValidator(validationOptions, formCard);
 const formAvatarValidator = new FormValidator(validationOptions, formAvatar); 
 
-//
-
 formProfileValidator.enableValidation();
 formCardValidator.enableValidation();
 formAvatarValidator.enableValidation();
 
-// 
-
 buttonEdit.addEventListener('click', handleOpenFormProfile);
 buttonAdd.addEventListener('click', handleOpenFormCard);
 buttonAvatar.addEventListener('click',  handleOpenFormAvatar);
+
 popupFormProfile.setEventListeners();
 popupFormAvatar.setEventListeners();
 popupFormConfirmation.setEventListeners();

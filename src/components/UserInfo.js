@@ -1,7 +1,7 @@
 export default class UserInfo {
-  constructor({ userNameSelector, userJobSelector, userAvatarSelector }) {
+  constructor({ userNameSelector, userAboutSelector, userAvatarSelector }) {
     this._userName = document.querySelector(userNameSelector);
-    this._userJob = document.querySelector(userJobSelector);
+    this._userAbout = document.querySelector(userAboutSelector);
     this._userAvatar = document.querySelector(userAvatarSelector);
   }
 
@@ -10,15 +10,14 @@ export default class UserInfo {
     //когда данные пользователя нужно будет подставить в форму при открытии.
     const userInfo = {};
     userInfo['name'] = this._userName.textContent;
-    userInfo['job'] = this._userJob.textContent;
-    //userInfo['avatar'] = this._userJob.textContent;
+    userInfo['about'] = this._userAbout.textContent;
     return userInfo;
   }
 
-  setUserInfo({ name, job, avatar }) {
+  setUserInfo({ name, about, avatar }) {
     //принимает новые данные пользователя и добавляет их на страницу
     this._userName.textContent = name;
-    this._userJob.textContent = job;
+    this._userAbout.textContent = about;
     this._userAvatar.src = avatar;
   }
   setUserAvatar({ avatar }) {

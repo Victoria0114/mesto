@@ -1,7 +1,7 @@
 export default class Card {
     constructor(cardData, userId, templateSelector, handleCardClick, { handleLikeClick, handleDeleteClick }) {
-      this._link = cardData.link;
       this._name = cardData.name;
+      this._link = cardData.link;
       this._likes = cardData.likes;
       this._cardId = cardData._id;
       this._ownerId = cardData.owner._id;
@@ -69,14 +69,14 @@ export default class Card {
         if (this._ownerId !== this._userId) {
             this._buttonDelete.remove();
         }
-      
+
+        this._setEventListeners();
+
         this._cardImage.src = this._link;
         this._cardImage.alt = this._name;
         this._cardName.textContent = this._name;
         //this._cardName.querySelector('.card__mesto').textContent = this._name;
 
-        this._setEventListeners();
-    
         return this._card;
     } 
 }

@@ -16,12 +16,10 @@ export const popupFormAvatarSelector = '.popup_type_avatar';
 
 /* профиль пользователя */
 export const userNameSelector = '.profile__name';
-export const userJobSelector = '.profile__about';
+export const userAboutSelector = '.profile__about';
 export const userAvatarSelector = '.profile__avatar';
 
 /* кнопки */
-//export const buttonOpenEditProfilePopup = document.querySelector(".profile__edit-button");
-//export const buttonOpenAddCardPopup = document.querySelector(".profile__add-button");
 export const buttonEdit = document.querySelector('.profile__edit-button');
 export const buttonAdd = document.querySelector('.profile__add-button');
 export const buttonAvatar = document.querySelector('.profile__avatar-button');

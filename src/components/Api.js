@@ -4,24 +4,21 @@ export default class Api {
     this._headers = headers;
   }
   
-  // проверить ответ сервера
   _checkResponse(res) {
     if (res.ok) {
       return res.json();
     }
-    return Promise.reject(`Ошибка: ${res.status}`);
+    return Promise.reject(`${res.status}`);
   }
 
-  // получить данные о пользователе
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'GET',
       headers: this._headers
     })
-      .then(this._checkResponse)
+    .then(this._checkResponse)
   }
 
-  // обновить данные о пользователе
   patchUserInfo({ name, about }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
@@ -31,10 +28,9 @@ export default class Api {
         about
       })
     })
-      .then(this._checkResponse)
+    .then(this._checkResponse)
   }
   
-  // обновить аватар пользователя
   patchAvatar({ avatar }) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
@@ -43,19 +39,17 @@ export default class Api {
         avatar
       })
     })
-      .then(this._checkResponse)
+    .then(this._checkResponse)
   }
 
-  // получить карточки
   getCards() {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'GET',
       headers: this._headers
     })
-      .then(this._checkResponse)
+    .then(this._checkResponse)
   }
 
-  // добавить карточку
   postCard({ name, link }) {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
@@ -65,33 +59,30 @@ export default class Api {
         link
       })
     })
-      .then(this._checkResponse)
+    .then(this._checkResponse)
   }
 
-  // удалить карточку
   deleteCard(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}`, {
       method: 'DELETE',
       headers: this._headers,
     })
-      .then(this._checkResponse)
+    .then(this._checkResponse)
   }
 
-  // поставить лайк
   putLike(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: 'PUT',
       headers: this._headers,
     })
-      .then(this._checkResponse)
+    .then(this._checkResponse)
   }
 
-  // удалить лайк
   deleteLike(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: 'DELETE',
       headers: this._headers,
     })
-      .then(this._checkResponse)
+    .then(this._checkResponse)
   }
 }
