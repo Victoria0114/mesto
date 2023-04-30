@@ -17,5 +17,5 @@
 * JavaScript (ES2015)
 * Сборка проекта с помощью Webpack 
 
-* [Ссылка на работу:] (https://victoria0114.github.io/mesto/)
+* [Ссылка на работу] (https://victoria0114.github.io/mesto/)
 
