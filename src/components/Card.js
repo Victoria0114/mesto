@@ -57,6 +57,7 @@ export default class Card {
         this._likeCounter = this._card.querySelector('.card__like-counter');
 
         this._likeCounter.textContent = this._likes.length;
+       
 
         if (this._likes.some((user) => user._id === this._ownerId)) {
             this._isLiked = true;

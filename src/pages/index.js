@@ -41,13 +41,18 @@ const api = new Api({
 Promise.all([api.getUserInfo(), api.getCards()])
   .then(([userData, cards]) => {
     userId = userData._id;
+
+    console.log(cardsContainer.renderItems(cards))
+
+    //console.log(userInfo.setUserInfo(userData))
+
     userInfo.setUserInfo(userData); // получаем данные пользователя
     cardsContainer.renderItems(cards); // карточки
   })
   .catch((err) => {
     console.log(`Ошибка: ${err}`);
-  })
 
+  })
 
   const handleOpenFormProfile = () => {
   const { name, about } = userInfo.getUserInfo();
