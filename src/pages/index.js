@@ -51,7 +51,6 @@ Promise.all([api.getUserInfo(), api.getCards()])
   })
   .catch((err) => {
     console.log(`Ошибка: ${err}`);
-
   })
 
   const handleOpenFormProfile = () => {
