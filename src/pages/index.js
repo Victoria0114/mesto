@@ -44,7 +44,7 @@ Promise.all([api.getUserInfo(), api.getCards()])
 
     console.log(cardsContainer.renderItems(cards))
 
-    //console.log(userInfo.setUserInfo(userData))
+    console.log(userInfo.setUserInfo(userData))
 
     userInfo.setUserInfo(userData); // получаем данные пользователя
     cardsContainer.renderItems(cards); // карточки
@@ -55,7 +55,9 @@ Promise.all([api.getUserInfo(), api.getCards()])
 
   const handleOpenFormProfile = () => {
   const { name, about } = userInfo.getUserInfo();
+  console.log('1');
   formProfile.name.value = name;
+  console.log('2');
   formProfile.about.value = about;
   formProfileValidator.resetValidation();
   popupFormProfile.open();
