@@ -42,9 +42,9 @@ Promise.all([api.getUserInfo(), api.getCards()])
   .then(([userData, cards]) => {
     userId = userData._id;
 
-    console.log(cardsContainer.renderItems(cards))
+    //console.log(cardsContainer.renderItems(cards))
 
-    console.log(userInfo.setUserInfo(userData))
+    //console.log(userInfo.setUserInfo(userData))
 
     userInfo.setUserInfo(userData); // получаем данные пользователя
     cardsContainer.renderItems(cards); // карточки
@@ -113,8 +113,8 @@ const createCard = (cardData) => {
         popupFormConfirmation.open();
         popupFormConfirmation.handleSubmit(() => {
           api.deleteCard(cardId)
-            .then(() => {
-              card.deleteCard();
+            .then((cardData) => {
+              card.deleteCard(cardData._id);
               popupFormConfirmation.close();
             })
             .catch((err) => {
