@@ -15,6 +15,10 @@ export const popupFormConfirmationSelector = '.popup_type_delete-card';
 export const popupFormAvatarSelector = '.popup_type_avatar';
 
 /* профиль пользователя */
+// export const userNameSelector = document.querySelector('.profile__name');
+// export const userAboutSelector = document.querySelector('.profile__about');
+// export const userAvatarSelector = document.querySelector('.profile__avatar');
+
 export const userNameSelector = '.profile__name';
 export const userAboutSelector = '.profile__about';
 export const userAvatarSelector = '.profile__avatar';
@@ -25,12 +29,13 @@ export const buttonAdd = document.querySelector('.profile__add-button');
 export const buttonAvatar = document.querySelector('.profile__avatar-button');
 
 /* форма Редактировать профиль */
-//export const formEditProfile = document.querySelector('[name='form-edit-profile']');
+//export const formProfile = document.forms('[name='form-edit-profile']');
 export const formProfile = document.forms['form-edit-profile'];
 
 /* форма Новое место */
 //export const formCard = document.querySelector('[name='form-add-card']');
 export const formCard = document.forms['form-add-card'];
+//export const formCard = document.getElementsByName('form-add-card');
 
 /* форма Аватар */
 //export const formAvatar = document.querySelector('[name='form-avatar']');
