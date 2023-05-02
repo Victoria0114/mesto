@@ -22,7 +22,7 @@ export const popupFormAvatarSelector = '.popup_type_avatar';
 export const userNameSelector = '.profile__name';
 export const userAboutSelector = '.profile__about';
 export const userAvatarSelector = '.profile__avatar';
-
+//
 /* кнопки */
 export const buttonEdit = document.querySelector('.profile__edit-button');
 export const buttonAdd = document.querySelector('.profile__add-button');
