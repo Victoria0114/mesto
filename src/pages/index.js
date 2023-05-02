@@ -55,9 +55,8 @@ Promise.all([api.getUserInfo(), api.getCards()])
 
   const handleOpenFormProfile = () => {
   const { name, about } = userInfo.getUserInfo();
-  console.log('1');
+  
   formProfile.name.value = name;
-  console.log('2');
   formProfile.about.value = about;
   formProfileValidator.resetValidation();
   popupFormProfile.open();
@@ -114,8 +113,8 @@ const createCard = (cardData) => {
         popupFormConfirmation.open();
         popupFormConfirmation.handleSubmit(() => {
           api.deleteCard(cardId)
-            .then((cardData) => {
-              card.deleteCard(cardData._id);
+            .then(() => {
+              card.deleteCard();
               popupFormConfirmation.close();
             })
             .catch((err) => {
