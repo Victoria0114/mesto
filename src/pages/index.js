@@ -113,8 +113,8 @@ const createCard = (cardData) => {
         popupFormConfirmation.open();
         popupFormConfirmation.handleSubmit(() => {
           api.deleteCard(cardId)
-            .then((cardData) => {
-              card.deleteCard(cardData._id);
+            .then(() => {
+              card.deleteCard();
               popupFormConfirmation.close();
             })
             .catch((err) => {
